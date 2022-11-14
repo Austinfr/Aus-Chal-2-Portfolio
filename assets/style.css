@@ -1,6 +1,11 @@
+*{
+    font-size:20px;
+}
+
 /* CSS for the header and its components */
 header{
     background-color: aquamarine;
+    padding:2%;
     display:flex;
     flex-flow: row wrap;
     justify-content:space-between;
@@ -9,7 +14,7 @@ header{
 
 header h1{
     margin-left: 2%;
-    font-size:50px;
+    font-size:250%;
     text-align: end;
 }
 
@@ -18,12 +23,56 @@ nav {
 }
 
 a{
-    size: 20px;
     text-decoration: underline 3px;
     text-underline-offset: 5px;
+    border:2px solid darkblue;
+}
+
+a:hover{
+    text-underline-offset: 5%;
+    font-size:90%;
 }
 
 /* CSS for the main and its components*/
 main{
+    margin:2%;
+    size:20px;
+    display: flex;
+    flex-flow: column;
+}
 
+main section{
+    display: flex;
+    flex-flow: row;
+    border: 2px brown solid;
+    align-items: center;
+}
+
+section h2{
+    margin:20px;
+
+}
+
+section div{
+    border: 2px orange solid;
+    margin: 2%;
+    width: 100%;
+}
+
+.work-card{
+    width: fit-content;
+}
+
+section ul{
+    list-style:armenian;
+    display:flex;
+    width:100%;
+    justify-content: space-evenly;
+    border: 2px yellow solid;
+}
+
+@media screen and (max-width:776px) {
+    header{
+        flex-flow:column;
+    }
 }
