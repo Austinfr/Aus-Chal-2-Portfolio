@@ -13,6 +13,7 @@ header{
 }
 
 header h1{
+    border:2px solid violet;
     margin-left: 2%;
     font-size:250%;
     text-align: end;
@@ -43,14 +44,19 @@ main{
 
 main section{
     display: flex;
-    flex-flow: row;
+    flex-flow: row-reverse;
     border: 2px brown solid;
     align-items: center;
 }
 
-section h2{
-    margin:20px;
+main section:nth-child(even){
+    flex-flow:row;
+}
 
+section h2{
+    border: 2px solid green;
+    margin:2px;
+    width: fit-content;
 }
 
 section div{
@@ -63,6 +69,7 @@ section div{
     width: fit-content;
 }
 
+/* Styling for the list of contacts that I list */
 section ul{
     list-style:armenian;
     display:flex;
