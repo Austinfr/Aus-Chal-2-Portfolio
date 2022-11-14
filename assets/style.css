@@ -1,10 +1,18 @@
+:root{
+    --lemon-meringue:#f1e8b8;
+    --yellow-crayola:#f9e784;
+    --copper-crayola:#e58f65;
+    --deep-red:#d05353;
+
+}
+
 *{
     font-size:20px;
 }
 
 /* CSS for the header and its components */
 header{
-    background-color: aquamarine;
+    background-color: var(--deep-red);
     padding:2%;
     display:flex;
     flex-flow: row wrap;
@@ -14,16 +22,21 @@ header{
 
 header h1{
     border:2px solid violet;
-    margin-left: 2%;
+    width:30%;
     font-size:250%;
     text-align: end;
+    background-color: var(--yellow-crayola);
 }
 
 nav {
+    border: 2px solid blue;
+    background-color: var(--copper-crayola);
+    padding: 1%;
     margin: 0 2% 0 2%;
 }
 
-a{
+nav a{
+    background-color: var(--deep-red);
     text-decoration: underline 3px;
     text-underline-offset: 5px;
     border:2px solid darkblue;
@@ -36,10 +49,12 @@ a:hover{
 
 /* CSS for the main and its components*/
 main{
-    margin:2%;
+    background-color: var(--lemon-meringue);
+    padding:2% 7% 2% 7%;
     size:20px;
     display: flex;
     flex-flow: column;
+    height:100%;
 }
 
 main section{
@@ -47,6 +62,7 @@ main section{
     flex-flow: row-reverse;
     border: 2px brown solid;
     align-items: center;
+    margin-bottom: 2%;
 }
 
 main section:nth-child(even){
@@ -57,6 +73,7 @@ section h2{
     border: 2px solid green;
     margin:2px;
     width: fit-content;
+    font-size: 50px;
 }
 
 section div{
@@ -81,5 +98,21 @@ section ul{
 @media screen and (max-width:776px) {
     header{
         flex-flow:column;
+    }
+    h1{
+        margin-bottom: 3%;
+        text-align: center;
+        width: 100%;
+    }
+    main section{
+        flex-flow:column;
+    }
+    main section:nth-child(even){
+        flex-flow:column;
+    }
+    section h2{
+        border-bottom: 5px var(--copper-crayola) solid;
+        width: 100%;
+        text-align: center;
     }
 }
