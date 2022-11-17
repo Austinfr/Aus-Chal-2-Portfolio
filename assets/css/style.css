@@ -1,56 +1,108 @@
+/* Variables */
 :root{
     --lemon-meringue:#f1e8b8;
     --yellow-crayola:#f9e784;
     --copper-crayola:#e58f65;
     --deep-red:#d05353;
-
 }
+/* Variables */
 
+/* Generics */
 *{
     font-size:20px;
+    /* Looks nice to me, might be ugly idk idc */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+/* General background color*/
 body{
-    background-color: var(--lemon-meringue);
+    background-color: var(--deep-red);
 }
 
-/* CSS for the header and its components */
+/* Sets the styling to none and makes the anchor text a nice dark blue */
+a{
+    text-decoration: none;
+    color:rgb(5, 5, 102);
+}
+/* Generics */
+
+/* Main Webpage */
+/* CSS for the header and its components. Pushes them to each side of the screen */
 header{
-    background-color: var(--deep-red);
     padding:2%;
     display:flex;
     flex-flow: row wrap;
     justify-content:space-between;
     align-items: center;
 }
-
+/* Puts my name on the top with a background to set it apart */
 header h1{
-    border:2px solid violet;
     background-color: var(--yellow-crayola);
-    width:30%;
     font-size:250%;
     text-align: end;
+    width: fit-content;
+    padding-left:3%;
+}
+/* Is part of the span class so the header can have a fancy effect. Needs this or it will shrink all the text and such */
+.rainbow{
+    font: inherit;
 }
 
+/* Creates a rainbow effect for the text on hover */
+.rainbow:hover{
+    /* Create the gradient. */
+    background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+/* Creates a copper background nav bar with spaced links */
 nav {
-    border: 2px solid blue;
     background-color: var(--copper-crayola);
+    padding: 1% 2%;
+    margin: 0 3% 0 3%;
+    min-width: 410px;
+    width: 27%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+/* Adds a background color and border to pop them off the background. Nowrap is there to keep the text lined up */
+nav div{
+    background-color: #e77620;
     padding: 1%;
-    margin: 0 2% 0 2%;
+    border:2px solid rgb(0, 0, 224);
+    white-space: nowrap;
 }
-
-nav a{
-    background-color: var(--deep-red);
-    text-decoration: underline 3px;
-    text-underline-offset: 5px;
-    border:2px solid darkblue;
+/* Don't want the color to be changed */
+a:visited{
+    color:none;
 }
-
+/* An effect I like where it makes the font smaller and subsequently the container so it has a visual indication of what you'll press */
 a:hover{
     text-underline-offset: 5%;
     font-size:90%;
 }
 
+/* Puts a nice background image, which has its source linked below. It's free use */
 .banner-image{
     height:200px;
     /* https://unsplash.com/photos/cvBBO4PzWPg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink */
@@ -58,98 +110,152 @@ a:hover{
     background-size: 50%;
 }
 
-/* CSS for the main and its components*/
+/* CSS for the main and its components */
 main{
+    background-color: var(--lemon-meringue);
     padding:2% 7% 2% 7%;
+    margin: 0 5%;
     size:20px;
     display: flex;
     flex-flow: column;
     height:100%;
 }
 
+/* Aligns the rows to right to left and adds space to the bottom to seperate the sections */
 main section{
     display: flex;
     flex-flow: row-reverse;
-    border: 2px brown solid;
-    align-content: center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
-
+/* reverses every other section to be the opposite direction*/
 main section:nth-child(even){
     flex-flow:row;
 }
 
+/*  Styles the section heading to read right to left so that it fits the flow and adds a barrier between this and the section content
+    Adds a padding and margin so the border isn't up against anything and is more of seperator
+*/
 section h2{
-    border: 2px solid green;
     text-align: end;
-    margin:2px;
+    margin:2%;
     padding: 1% 1% 1% 4%;
     width: fit-content;
     font-size: 50px;
     border-left: 5px var(--deep-red) solid;
 }
 
+/* Does the same thing as above for every other section except oriented left to right */
 section:nth-child(even) h2{
     text-align: start;
+    margin: 2%;
     padding: 1% 4% 1% 1%;
-    border-left:2px solid green;
+    border-left:none;
     border-right: 5px var(--deep-red) solid;
 }
-
+/* Don't know exactly how to describe what this does but everything looks better with it */
 section div{
-    border: 2px orange solid;
     margin: 2%;
     width: 100%;
 }
 
+/* For more work items in the future(maybe) only contains 1 atm */
+.work-items{
+    flex: 1 0 1;
+    height: fit-content;
+}
+
+/* This is the class for an item card to contain some interaction to a project I have worked on */
 .work-card{
+    position: relative;
+    width:fit-content;
+    height: 200px;
+    width: 100%;
+    outline: 2px solid green;
+}
+
+/* This sets the text to be ontop of the image in the bottom left corner with a background color to contrast if from the image */
+.work-card p{
+    position: relative;
+    left:0;
+    top: 80%;
+    padding-left: 2%;
+    background-color: var(--copper-crayola);
     width: fit-content;
+}
+
+/* This puts the image behind the work card text and the link so that when you click on the image it opens in a new tab */
+.work-card img,
+.work-card a{
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    opacity:0.3;
+}
+
+/* This give it its on hover effect where it pops inward by pushing everything in the work card inward */
+.work-card:hover,
+.work-card:hover img{
+    outline:none;
+    padding:2%;
 }
 
 /* Styling for the list of contacts that I list */
 #contact ul{
-    list-style:circle;
     align-items: center;
     display:flex;
     width:100%;
     justify-content: space-evenly;
-    border: 2px yellow solid;
 }
 
-/* Adds a little circle after the link to look cool */
-#contact ul li::after{
-    content: " ○";
+/* Adds a little circle before and after the link to look cool */
+#contact ul li::after,
+#contact ul li::before{
+    content: " ○ ";
     size:20%;
     text-emphasis: bolder;
 }
+/* Main Webpage */
 
+/* For different screen sizes */
+/* This one changes the banner to be smaller so it isn't too large when scaled down*/
 @media screen and (max-width:1178px){
     .banner-image{
         height:150px;
     }
 }
 
-@media screen and (max-width:776px) {
-    header{
+/* 
+    The nav menu and header conflict before 776px so I decided to set it earlier just so
+    it's easier to manage
+*/
+@media screen and (max-width:829px) {
+    /* Sets everything to be in a column so it reads top to bottom */
+    header, main section, main section:nth-child(even){
         flex-flow:column;
     }
-    h1{
+    /* Realines the header to be top and center */
+    header h1{
         margin-bottom: 3%;
         text-align: center;
+        position: relative;
         width: 100%;
     }
-    main section{
-        flex-flow:column;
+    
+    header nav{
+        min-width: 90%;
     }
-    main section:nth-child(even){
-        flex-flow:column;
-    }
-    section h2{
+    /* Changes the border to be on the bottom to introduce what the next section is about */
+    section h2, section:nth-child(even) h2{
+        border:none;
         border-bottom: 5px var(--copper-crayola) solid;
         width: 100%;
         text-align: center;
     }
+
     .banner-image{
         height:100px;
     }
 }
+/* For different screen sizes */
