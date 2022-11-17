@@ -1,0 +1,155 @@
+:root{
+    --lemon-meringue:#f1e8b8;
+    --yellow-crayola:#f9e784;
+    --copper-crayola:#e58f65;
+    --deep-red:#d05353;
+
+}
+
+*{
+    font-size:20px;
+}
+
+body{
+    background-color: var(--lemon-meringue);
+}
+
+/* CSS for the header and its components */
+header{
+    background-color: var(--deep-red);
+    padding:2%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+
+header h1{
+    border:2px solid violet;
+    background-color: var(--yellow-crayola);
+    width:30%;
+    font-size:250%;
+    text-align: end;
+}
+
+nav {
+    border: 2px solid blue;
+    background-color: var(--copper-crayola);
+    padding: 1%;
+    margin: 0 2% 0 2%;
+}
+
+nav a{
+    background-color: var(--deep-red);
+    text-decoration: underline 3px;
+    text-underline-offset: 5px;
+    border:2px solid darkblue;
+}
+
+a:hover{
+    text-underline-offset: 5%;
+    font-size:90%;
+}
+
+.banner-image{
+    height:200px;
+    /* https://unsplash.com/photos/cvBBO4PzWPg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink */
+    background-image: url(../images/code1.jpg);
+    background-size: 50%;
+}
+
+/* CSS for the main and its components*/
+main{
+    padding:2% 7% 2% 7%;
+    size:20px;
+    display: flex;
+    flex-flow: column;
+    height:100%;
+}
+
+main section{
+    display: flex;
+    flex-flow: row-reverse;
+    border: 2px brown solid;
+    align-content: center;
+    margin-bottom: 2%;
+}
+
+main section:nth-child(even){
+    flex-flow:row;
+}
+
+section h2{
+    border: 2px solid green;
+    text-align: end;
+    margin:2px;
+    padding: 1% 1% 1% 4%;
+    width: fit-content;
+    font-size: 50px;
+    border-left: 5px var(--deep-red) solid;
+}
+
+section:nth-child(even) h2{
+    text-align: start;
+    padding: 1% 4% 1% 1%;
+    border-left:2px solid green;
+    border-right: 5px var(--deep-red) solid;
+}
+
+section div{
+    border: 2px orange solid;
+    margin: 2%;
+    width: 100%;
+}
+
+.work-card{
+    width: fit-content;
+}
+
+/* Styling for the list of contacts that I list */
+#contact ul{
+    list-style:circle;
+    align-items: center;
+    display:flex;
+    width:100%;
+    justify-content: space-evenly;
+    border: 2px yellow solid;
+}
+
+/* Adds a little circle after the link to look cool */
+#contact ul li::after{
+    content: " ○";
+    size:20%;
+    text-emphasis: bolder;
+}
+
+@media screen and (max-width:1178px){
+    .banner-image{
+        height:150px;
+    }
+}
+
+@media screen and (max-width:776px) {
+    header{
+        flex-flow:column;
+    }
+    h1{
+        margin-bottom: 3%;
+        text-align: center;
+        width: 100%;
+    }
+    main section{
+        flex-flow:column;
+    }
+    main section:nth-child(even){
+        flex-flow:column;
+    }
+    section h2{
+        border-bottom: 5px var(--copper-crayola) solid;
+        width: 100%;
+        text-align: center;
+    }
+    .banner-image{
+        height:100px;
+    }
+}
