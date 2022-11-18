@@ -18,6 +18,9 @@
 
 To create a portfolio in the form of a webpage where I can give and introduction of myself and display my work. There is a list of ways to contact me at the bottom. Ideally The website is styled nicely and creatively using CSS flex and other styling learned through bootcamp. Use of various styling, color and images.
 
+This is what it should resemble
+![Image of a website I based it off of](./assets/images/M2-Challenge.png)
+
 ## Installation
 
 A web browser that is up to date.
